@@ -36,7 +36,13 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-# User Faker to provide better seed data
+# Use Bootstrap for styling and templates
+gem 'bootstrap', '~> 4.1.1' 
+
+# Use jQuery as Bootstrap dependency
+gem 'jquery-rails'
+
+# Use Faker to provide better seed data
 gem 'faker', '~> 1.6', '>= 1.6.3'
 
 group :development, :test do
