@@ -1,22 +1,14 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
 
-  <h1>Reviews</h1>
+  <div class="row">
+    <div class="col-lg-9">
+      <%= render 'show_review_content' %>
+    </div>
+    <div class="col-lg-3">
+      <p>TEST</p>
+    </div>
+  </div>
 
-    <tbody>
-      <% @reviews.each do |review| %>
-        <tr>
-          <td><%= review.title %></td>
-          <td><%= link_to 'Show', review %></td>
-          <td><%= link_to 'Edit', edit_review_path(review) %></td>
-          <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <br>
-
-  <%= link_to 'New Review', new_review_path %>  
 </div>
 

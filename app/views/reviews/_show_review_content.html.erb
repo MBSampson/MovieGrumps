@@ -1,0 +1,14 @@
+<% @reviews.each do |review| %>
+
+	<div class="row review-item">
+		<div class="col-sm-3">
+			<img src="http://via.placeholder.com/200x150">
+		</div>
+		<div class="col-sm-9">
+			<h3><%= review.title %></h3>
+
+			<%= link_to 'Leave a Review', new_review_path %>	
+		</div>
+	</div>
+
+<% end %>
