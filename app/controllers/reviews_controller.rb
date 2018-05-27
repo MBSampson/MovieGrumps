@@ -7,6 +7,14 @@ class ReviewsController < ApplicationController
     @reviews = Review.all
   end
 
+  def about
+
+  end 
+
+  def movie_list 
+
+  end 
+
   # GET /reviews/1
   # GET /reviews/1.json
   def show

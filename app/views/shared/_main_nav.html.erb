@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="mx-auto order-0">
-        <a class="navbar-brand mx-auto" id="navbar-main-title" href="#">MovieGrumps</a>
+        <a class="navbar-brand mx-auto" id="navbar-main-title" href="#">
+            <%= image_tag("grumps-icon.png", class: "nav-main-icon") %>
+            MovieGrumps
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,19 +13,12 @@
     </div>
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">Movies</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">Reviews</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">About</a>
-            </li>
-
+           
+            <%= link_to "Home", root_path, class: "nav-link text-white" %>
+            <%= link_to "Movies", movie_list_path, class: "nav-link text-white" %>
+            <%= link_to "Reviews", review_list_path, class: "nav-link text-white" %>
+            <%= link_to "About", about_path, class: "nav-link text-white" %>
+            
         </ul>
     </div>
 </nav>
