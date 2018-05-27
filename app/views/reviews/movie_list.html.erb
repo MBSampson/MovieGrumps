@@ -1,1 +1,4 @@
 <h1>Movie List</h1>
+<% @movies.results.each do |movie| %>
+	<p><%= movie.title %></p>
+<% end %>

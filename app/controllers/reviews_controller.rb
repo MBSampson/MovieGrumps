@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
   end 
 
   def movie_list 
-
+    @movies = Tmdb::Movie.popular
   end 
 
   # GET /reviews/1
