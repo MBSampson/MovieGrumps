@@ -5,13 +5,14 @@ class ReviewsController < ApplicationController
   # GET /reviews.json
   def index
     @reviews = Review.all
+    @movies = Tmdb::Movie.popular
   end
 
   def about
-
+   
   end 
 
-  def movie_list 
+  def movie_list
     @movies = Tmdb::Movie.popular
   end 
 
@@ -83,5 +84,5 @@ class ReviewsController < ApplicationController
     def review_params
       params.require(:review).permit(:title)
     end
-    
+
 end

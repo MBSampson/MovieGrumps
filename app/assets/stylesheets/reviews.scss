@@ -7,10 +7,17 @@
 	border: 1px solid black;
 }
 
-.recent-reviews-container{
-	
-}
+.movie-container{
+	padding: 2.5%;
+	margin-top: 5%;
+	background-color: rgba(0, 0, 0, 0.01);
 
-.recent-movies-container{
-	
+	img{
+		margin: 0 auto;
+		display: block;
+	}
+
+	.movie-info-content{
+	padding-left: 2.5%;
+	}
 }

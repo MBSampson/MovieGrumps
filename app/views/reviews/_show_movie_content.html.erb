@@ -1,0 +1,16 @@
+<% @movies.results.each do |movie| %>
+
+	<div class="row review-item">
+		<div class="col-xl-3">
+			<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/<%= movie.poster_path %>">
+		</div>
+		<div class="col-xl-9">
+			<h3><%= movie.title %></h3>
+			<p>Release Date: <%= movie.release_date %></p>
+			<p>Genre: Action</p>
+
+			<%= link_to 'Leave a Review', new_review_path %>	
+		</div>
+	</div>
+
+<% end %>
