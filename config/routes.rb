@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :reviews
 
   get 'movie_list', to: 'reviews#movie_list', as: 'movie_list'
+  get 'movie', to: 'reviews#movie', as: 'movie'
   get 'about', to: 'reviews#about', as: 'about'
   get 'review_list', to: 'reviews#review_list', as: 'review_list'
 

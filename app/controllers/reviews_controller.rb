@@ -15,6 +15,10 @@ class ReviewsController < ApplicationController
     @movies = Tmdb::Movie.popular
   end 
 
+  def movie
+    @movie = Tmdb::Movie.detail(params[:movie_id])
+  end 
+
   # GET /reviews/1
   # GET /reviews/1.json
   def show
@@ -79,4 +83,5 @@ class ReviewsController < ApplicationController
     def review_params
       params.require(:review).permit(:title)
     end
+    
 end
