@@ -1,4 +1,7 @@
 <div class="recent-reviews-container">
 	<h3>Recent Reviews</h3>
+	<% @reviews[0..1].each do |review| %>
+		<p><%= review.movie_title %></p>
+	<% end %> 
 	<%= link_to "View All Reviews", review_list_path %>
 </div>

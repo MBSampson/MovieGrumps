@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
   def index
     @reviews = Review.all
     @movies = Tmdb::Movie.popular
+    @movies = @movies.results
   end
 
   def about
@@ -15,6 +16,8 @@ class ReviewsController < ApplicationController
   def movie_list
     @movies = Tmdb::Movie.popular
     @movies = @movies.results
+
+
     if params[:filter] == "title"
       @movies = @movies.sort_by &:title
     elsif params[:filter] == "release_date" 
@@ -22,6 +25,7 @@ class ReviewsController < ApplicationController
     elsif params[:filter] == "genre" 
       @movies = @movies.sort_by &:genre
     end  
+
   end 
 
   def movie

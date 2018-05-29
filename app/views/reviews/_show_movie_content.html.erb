@@ -1,4 +1,4 @@
-<% @movies.results.each do |movie| %>
+<% @movies.each do |movie| %>
 
 	<div class="row review-item">
 		<div class="col-xl-3">
@@ -12,6 +12,15 @@
 					<span class="btn btn-dark"><%= genre %></span>
 				<% end %>
 			</p>
+
+			<% @reviews.each do |review| %>
+				<% if review.movie_title == movie.title %>
+					<div class="movie-review-content">
+						<em>"<%= review.comment %>"</em> 
+						<p class="review-author-text">-<%= review.user_email %></p>
+					</div>
+				<% end %>
+			<% end %>
 
 			<%= link_to 'Leave a Review', new_review_path(:movie_title => movie.title) %>	
 		</div>
