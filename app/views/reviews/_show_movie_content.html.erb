@@ -8,8 +8,12 @@
 			<h3><%= movie.title %></h3>
 			<p>Release Date: <%= movie.release_date %></p>
 			<p>Genre: 
-				<% movie.genre_ids.each do |genre| %>
-					<span class="btn btn-dark"><%= genre %></span>
+				<% movie.genre_ids.each do |movie_genre| %>
+					<% @genres.each do |genre| %>
+						<% if genre.genre_id == movie_genre %>
+							<span class="btn btn-dark"><%= genre.name %></span>
+						<% end %>
+					<% end %>
 				<% end %>
 			</p>
 

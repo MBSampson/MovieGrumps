@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
     @reviews = Review.all
     @movies = Tmdb::Movie.popular
     @movies = @movies.results
+    @genres = Genre.all
   end
 
   def about
