@@ -7,9 +7,13 @@
 		<div class="col-xl-9">
 			<h3><%= movie.title %></h3>
 			<p>Release Date: <%= movie.release_date %></p>
-			<p>Genre: Action</p>
+			<p>Genre: 
+				<% movie.genre_ids.each do |genre| %>
+					<span class="btn btn-dark"><%= genre %></span>
+				<% end %>
+			</p>
 
-			<%= link_to 'Leave a Review', new_review_path %>	
+			<%= link_to 'Leave a Review', new_review_path(:movie_title => movie.title) %>	
 		</div>
 	</div>
 

@@ -14,10 +14,22 @@ class ReviewsController < ApplicationController
 
   def movie_list
     @movies = Tmdb::Movie.popular
+    @movies = @movies.results
+    if params[:filter] == "title"
+      @movies = @movies.sort_by &:title
+    elsif params[:filter] == "release_date" 
+      @movies = @movies.sort_by &:release_date
+    elsif params[:filter] == "genre" 
+      @movies = @movies.sort_by &:genre
+    end  
   end 
 
   def movie
     @movie = Tmdb::Movie.detail(params[:movie_id])
+  end 
+
+  def review_list
+    @reviews = Review.all
   end 
 
   # GET /reviews/1
@@ -28,6 +40,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/new
   def new
     @review = Review.new
+    @time = Time.now
   end
 
   # GET /reviews/1/edit
@@ -82,7 +95,7 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:title)
+      params.require(:review).permit(:movie_title, :review_date, :rating, :comment, :user_email)
     end
 
 end

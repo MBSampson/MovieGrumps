@@ -8,12 +8,33 @@
 
 require 'faker'
 
-5.times do
+3.times do
 	Review.create!(
-		movie_title: "Test",
+		movie_title: "Deadpool 2",
 		review_date: Faker::Date.between(7.days.ago, Date.today),
 		user_email: Faker::Internet.email,
 		rating:  Faker::Number.between(1, 4),
 		comment: Faker::Lorem.sentence
 	)
 end 
+
+2.times do
+	Review.create!(
+		movie_title: "Avengers: Infinity War",
+		review_date: Faker::Date.between(7.days.ago, Date.today),
+		user_email: Faker::Internet.email,
+		rating:  Faker::Number.between(1, 4),
+		comment: Faker::Lorem.sentence
+	)
+end 
+
+2.times do
+	Review.create!(
+		movie_title: "Fifty Shades Freed",
+		review_date: Faker::Date.between(7.days.ago, Date.today),
+		user_email: Faker::Internet.email,
+		rating:  Faker::Number.between(1, 4),
+		comment: Faker::Lorem.sentence
+	)
+end 
+

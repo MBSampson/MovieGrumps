@@ -11,12 +11,29 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :user_email %>
+    <%= form.text_field :user_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.text_field :rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_field :comment %>
   </div>
 
   <div class="actions">
+    <%= form.hidden_field :movie_title, :value => params[:movie_title] %>
+    <%= form.hidden_field :review_date, :value => @time %>
     <%= form.submit %>
   </div>
 <% end %>
+
+<%= @time %>
+
+<%= params[:movie_title] %>

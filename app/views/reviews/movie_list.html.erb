@@ -1,11 +1,21 @@
 <br>
 <div class="container">
+	<div class="sort-options-container">
+
+		Sort By:
+		
+		  <%= link_to "Title", movie_list_path(:filter => "title"), class: "btn btn-info" %> 
+		  <%= link_to "Release Date", movie_list_path(:filter => "release_date"), class: "btn btn-info" %> 
+		  <%= link_to "Genre", movie_list_path(:filter => "genre"), class: "btn btn-info" %> 
+		
+	</div>
 	<div class="row">
-		<% @movies.results.each do |movie| %>
+		<% @movies.each do |movie| %>
 			<div class="col-md-3">
 				<%= link_to movie_path(:movie_id => movie.id) do %>
-					<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/<%= movie.poster_path %>">
+					<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/<%= movie.poster_path %>" class="movie-poster-image">
 				<% end %>
+				<p class="movie-list-title"><%= movie.title %></p>
 			</div>
 		<% end %>
 	</div>

@@ -7,6 +7,11 @@
 	border: 1px solid black;
 }
 
+.sort-options-container{
+	padding: 1%;
+	margin-bottom: 2.5%;
+}
+
 .movie-container{
 	padding: 2.5%;
 	margin-top: 5%;
@@ -20,4 +25,28 @@
 	.movie-info-content{
 	padding-left: 2.5%;
 	}
+}
+
+.review-container{
+	padding: 2.5%;
+	margin-top: 5%;
+	background-color: rgba(0, 0, 0, 0.01);
+
+	img{
+		margin: 0 auto;
+		display: block;
+	}
+
+	.review-info-content{
+	padding-left: 2.5%;
+	}
+}
+
+.movie-list-title{
+	text-align: center;
+}
+
+.movie-poster-image{
+	margin: 0 auto;
+	display: block;
 }
