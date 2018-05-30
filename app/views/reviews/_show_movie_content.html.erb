@@ -11,7 +11,7 @@
 				<% movie.genre_ids.each do |movie_genre| %>
 					<% @genres.each do |genre| %>
 						<% if genre.genre_id == movie_genre %>
-							<span class="btn btn-dark"><%= genre.name %></span>
+							<span class="btn btn-secondary btn-sm"><%= genre.name %></span>
 						<% end %>
 					<% end %>
 				<% end %>

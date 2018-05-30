@@ -1,12 +1,9 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :set_movies, only: [:index, :movie_list]
+  before_action :set_review_list, only: [:index, :review_list]
 
-  # GET /reviews
-  # GET /reviews.json
   def index
-    @reviews = Review.all
-    @movies = Tmdb::Movie.popular
-    @movies = @movies.results
     @genres = Genre.all
   end
 
@@ -15,10 +12,6 @@ class ReviewsController < ApplicationController
   end 
 
   def movie_list
-    @movies = Tmdb::Movie.popular
-    @movies = @movies.results
-
-
     if params[:filter] == "title"
       @movies = @movies.sort_by &:title
     elsif params[:filter] == "release_date" 
@@ -33,27 +26,21 @@ class ReviewsController < ApplicationController
     @movie = Tmdb::Movie.detail(params[:movie_id])
   end 
 
-  def review_list
-    @reviews = Review.all
+  def review_list 
+
   end 
 
-  # GET /reviews/1
-  # GET /reviews/1.json
   def show
   end
 
-  # GET /reviews/new
   def new
     @review = Review.new
     @time = Time.now
   end
 
-  # GET /reviews/1/edit
   def edit
   end
 
-  # POST /reviews
-  # POST /reviews.json
   def create
     @review = Review.new(review_params)
 
@@ -68,8 +55,6 @@ class ReviewsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /reviews/1
-  # PATCH/PUT /reviews/1.json
   def update
     respond_to do |format|
       if @review.update(review_params)
@@ -82,8 +67,6 @@ class ReviewsController < ApplicationController
     end
   end
 
-  # DELETE /reviews/1
-  # DELETE /reviews/1.json
   def destroy
     @review.destroy
     respond_to do |format|
@@ -97,6 +80,15 @@ class ReviewsController < ApplicationController
     def set_review
       @review = Review.find(params[:id])
     end
+
+    def set_review_list 
+      @reviews = Review.all
+    end 
+
+    def set_movies
+      @movies = Tmdb::Movie.popular
+      @movies = @movies.results
+    end 
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
