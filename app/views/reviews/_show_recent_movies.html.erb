@@ -1,7 +1,7 @@
 <div class="recent-movies-container">
 	<h3>Recent Movies</h3>
-	<% @movies[0..1].each do |movie| %>
+	<% @recent_movies[0..3].each do |movie| %>
 		<p><%= movie.title %></p>
 	<% end %> 
-	<%= link_to "View All Movies", movie_list_path %>
+	<%= link_to "View All Movies", movies_path %>
 </div>

@@ -4,6 +4,7 @@
             <%= image_tag("grumps-icon.png", class: "nav-main-icon") %>
             MovieGrumps
         </a>
+        <p class="text-white"><i>May be moody, rude, and unsatisfied</i></p>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -14,10 +15,10 @@
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
            
-            <%= link_to "Home", root_path, class: "nav-link text-white" %>
-            <%= link_to "Movies", movie_list_path, class: "nav-link text-white" %>
-            <%= link_to "Reviews", review_list_path, class: "nav-link text-white" %>
-            <%= link_to "About", about_path, class: "nav-link text-white" %>
+            <%= link_to "HOME", root_path, class: "nav-link text-white" %>
+            <%= link_to "MOVIES", movies_path, class: "nav-link text-white" %>
+            <%= link_to "REVIEWS", review_list_path, class: "nav-link text-white" %>
+            <%= link_to "ABOUT", about_path, class: "nav-link text-white" %>
             
         </ul>
     </div>

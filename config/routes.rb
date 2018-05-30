@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :reviews
+  resources :movies 
 
-  get 'movie_list', to: 'reviews#movie_list', as: 'movie_list'
-  get 'movie', to: 'reviews#movie', as: 'movie'
+  get 'show_movie', to: 'movies#show_movie', as: 'show_movie'
   get 'about', to: 'reviews#about', as: 'about'
   get 'review_list', to: 'reviews#review_list', as: 'review_list'
 

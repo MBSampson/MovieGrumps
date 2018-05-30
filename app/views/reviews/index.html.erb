@@ -1,18 +1,22 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-  <div class="row">
-    <div class="col-lg-9">
-      <%= render 'show_movie_content' %>
-    </div>
-    <div class="col-lg-3">
-    	<div class="recent-content-container">
-    		<%= render 'show_recent_reviews' %>
-    		<hr>
-      		<%= render 'show_recent_movies' %>
-    	</div>
-    </div>
+<div class="sort-options-container">
+Sort By:
+  <%= link_to "Title", reviews_path(:filter => "title"), class: "btn btn-info btn-sm" %> 
+  <%= link_to "Release Date", reviews_path(:filter => "release_date"), class: "btn btn-info btn-sm" %> 
+  <%= link_to "Genre", reviews_path(:filter => "genre"), class: "btn btn-info btn-sm" %> 
+</div>
+
+<div class="row">
+  <div class="col-lg-9">
+    <%= render 'show_movie_content' %>
   </div>
-
+  <div class="col-lg-3">
+  	<div class="recent-content-container">
+  		<%= render 'show_recent_reviews' %>
+  		<hr>
+    		<%= render 'show_recent_movies' %>
+  	</div>
+  </div>
 </div>
 

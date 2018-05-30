@@ -1,18 +1,15 @@
-<br>
-<div class="container">
-	<div class="row">
-		<% @reviews.each do |review| %>
-			<div class="col-lg-6">
-				<h3><%= review.movie_title %></h3>
-				<h5><%= review.review_date %></h5>
-				<p><%= review.rating %></p>
-				<p><%= review.comment %></p>
-				<br>
-				<p>Posted by: <%= review.user_email %></p>
-				<%= link_to review_path(:id => review.id) do %>
-					<p>See this review</p>
-				<% end %>
-			</div>
-		<% end %>
-	</div>
-</div>	
+<div class="row">
+	<% @reviews.each do |review| %>
+		<div class="col-lg-6">
+			<h3><%= review.movie_title %></h3>
+			<h5><%= review.review_date %></h5>
+			<p><%= review.rating %></p>
+			<p><%= review.comment %></p>
+			<br>
+			<p>Posted by: <%= review.user_email %></p>
+			<%= link_to review_path(:id => review.id) do %>
+				<p>See this review</p>
+			<% end %>
+		</div>
+	<% end %>
+</div>

@@ -1,29 +1,28 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :set_movies, only: [:index, :movie_list]
   before_action :set_review_list, only: [:index, :review_list]
 
   def index
     @genres = Genre.all
-  end
+    @movies = Tmdb::Movie.popular
+    @movies = @movies.results
 
-  def about
-   
-  end 
-
-  def movie_list
     if params[:filter] == "title"
       @movies = @movies.sort_by &:title
     elsif params[:filter] == "release_date" 
       @movies = @movies.sort_by &:release_date
     elsif params[:filter] == "genre" 
       @movies = @movies.sort_by &:genre
-    end  
+    end
 
-  end 
+    @recent_reviews = Review.all.sort_by &:review_date
+    @recent_movies = Tmdb::Movie.popular
+    @recent_movies = @recent_movies.results.sort_by &:release_date
 
-  def movie
-    @movie = Tmdb::Movie.detail(params[:movie_id])
+  end
+
+  def about
+   
   end 
 
   def review_list 
@@ -85,14 +84,8 @@ class ReviewsController < ApplicationController
       @reviews = Review.all
     end 
 
-    def set_movies
-      @movies = Tmdb::Movie.popular
-      @movies = @movies.results
-    end 
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
       params.require(:review).permit(:movie_title, :review_date, :rating, :comment, :user_email)
     end
-
 end

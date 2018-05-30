@@ -23,21 +23,6 @@
 	margin-bottom: 2.5%;
 }
 
-.movie-container{
-	padding: 2.5%;
-	margin-top: 5%;
-	background-color: rgba(0, 0, 0, 0.01);
-
-	img{
-		margin: 0 auto;
-		display: block;
-	}
-
-	.movie-info-content{
-	padding-left: 2.5%;
-	}
-}
-
 .review-container{
 	padding: 2.5%;
 	margin-top: 5%;
@@ -53,11 +38,14 @@
 	}
 }
 
-.movie-list-title{
-	text-align: center;
+.about-container{
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+	padding-top: 5%;
 }
 
-.movie-poster-image{
-	margin: 0 auto;
-	display: block;
+.small-brand-image{
+	height: 100px;
+	float: left;
+	padding-right: 2.5%;
 }
