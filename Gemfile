@@ -48,6 +48,9 @@ gem 'faker', '~> 1.6', '>= 1.6.3'
 # Use TMDB api wrapper for easy-to-use calls
 gem 'themoviedb-api', '~> 1.2'
 
+# Use Kaminari for pagination
+gem 'kaminari', '~> 0.17.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
