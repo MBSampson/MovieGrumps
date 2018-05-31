@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
   end 
 
   def review_list 
-
+    
   end 
 
   def show

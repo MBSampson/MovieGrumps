@@ -34,7 +34,7 @@
 			<% end %>
 
 			<% if @movie_reviews.length > 2 %>
-				<%= link_to "View More", show_movie_path(:movie_title => @movie_reviews.movie_title) %>
+				<%= link_to "View More", show_movie_path(:movie_id => movie.id) %>
 			<% end %>
 
 			<%= link_to 'Leave a Review', new_review_path(:movie_title => movie.title) %>	
