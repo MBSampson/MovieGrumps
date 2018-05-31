@@ -17,13 +17,24 @@
 				<% end %>
 			</p>
 
+			<% @movie_reviews = [] %>
 			<% @reviews.each do |review| %>
+				<% if review.movie_title == movie.title %>
+					<% @movie_reviews.push(review) %>
+				<% end %>
+			<% end %>
+
+			<% @movie_reviews[0..2].each_with_index do |review| %>
 				<% if review.movie_title == movie.title %>
 					<div class="movie-review-content">
 						<em>"<%= review.comment %>"</em> 
 						<p class="review-author-text">-<%= review.user_email %></p>
 					</div>
 				<% end %>
+			<% end %>
+
+			<% if @movie_reviews.length > 2 %>
+				<%= link_to "View More", show_movie_path(:movie_title => @movie_reviews.movie_title) %>
 			<% end %>
 
 			<%= link_to 'Leave a Review', new_review_path(:movie_title => movie.title) %>	

@@ -8,7 +8,7 @@
 
 require 'faker'
 
-3.times do
+5.times do
 	Review.create!(
 		movie_title: "Deadpool 2",
 		review_date: Faker::Date.between(7.days.ago, Date.today),

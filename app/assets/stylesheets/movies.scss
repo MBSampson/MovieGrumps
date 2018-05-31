@@ -21,7 +21,15 @@
 	}
 
 	.review-user-content{
-	float: right;
+		float: right;
+	}
+
+	.review-rating-content{
+		float: right;
+	}
+
+	.review-title-content{
+		float: left;
 	}
 }
 
@@ -29,9 +37,8 @@
 	text-align: center;
 	background-color: #343a40;
 	color: white;
-	width: 200px;
-	margin: 0 auto 5%;
-	box-shadow: 2px 2px 2px black;
+	width: 185px;
+	margin: 0 auto 10%;
 }
 
 .movie-poster-image{
