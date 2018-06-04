@@ -22,7 +22,8 @@ class MoviesController < ApplicationController
 			if review.movie_title == @movie.title
 				@reviews.push(review) 
 			end 
-		end 
+		end
+		@reviews = Kaminari.paginate_array(@reviews).page(params[:page]).per(4)
 	end 
 
 	private 
