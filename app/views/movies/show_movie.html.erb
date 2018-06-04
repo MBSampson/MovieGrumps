@@ -20,7 +20,6 @@
 	</div>
 </div>
 <br>
-<%= paginate @reviews %>
 <div class="row">
 	<% @reviews[0..3].each do |review| %>
 		<% if review.movie_title == @movie.title %>
@@ -44,4 +43,5 @@
 		<% end %>
 	<% end %>
 </div>
+<%= paginate @reviews %>
 

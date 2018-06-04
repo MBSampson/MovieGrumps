@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :set_review_list, only: [:index, :review_list]
 
   def index
+    @reviews = Review.all
     @genres = Genre.all
     @movies = Tmdb::Movie.popular
     @movies = @movies.results
@@ -25,8 +25,10 @@ class ReviewsController < ApplicationController
    
   end 
 
-  def review_list 
-    
+  def review_list
+    @reviews = Review.all.sort_by &:review_date
+    @reviews.reverse! 
+    @reviews = Kaminari.paginate_array(@reviews).page(params[:page]).per(8)
   end 
 
   def show
@@ -79,10 +81,6 @@ class ReviewsController < ApplicationController
     def set_review
       @review = Review.find(params[:id])
     end
-
-    def set_review_list 
-      @reviews = Review.all
-    end 
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params

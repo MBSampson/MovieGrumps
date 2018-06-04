@@ -10,7 +10,8 @@ class MoviesController < ApplicationController
 			@movies = @movies.sort_by &:release_date
 		elsif params[:filter] == "genre" 
 			@movies = @movies.sort_by &:genre
-		end  
+		end
+		@movies = Kaminari.paginate_array(@movies).page(params[:page]).per(12)
 	end	 
 
 	def show_movie
