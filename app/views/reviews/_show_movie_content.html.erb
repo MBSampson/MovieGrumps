@@ -1,13 +1,13 @@
 <% @movies.each do |movie| %>
 
 	<div class="row review-item">
-		<div class="col-xl-3">
-			<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/<%= movie.poster_path %>">
+		<div class="col-xl-2">
+			<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/<%= movie.poster_path %>" class="review-item-img">
 		</div>
-		<div class="col-xl-9">
+		<div class="col-xl-10">
 			<h3><%= movie.title %></h3>
-			<p>Release Date: <%= movie.release_date %></p>
-			<p>Genre: 
+			<p class="release-date">Release: <%= movie.release_date %></p>
+			<p> 
 				<% movie.genre_ids.each do |movie_genre| %>
 					<% @genres.each do |genre| %>
 						<% if genre.genre_id == movie_genre %>
@@ -16,6 +16,7 @@
 					<% end %>
 				<% end %>
 			</p>
+			<hr>
 
 			<% @movie_reviews = [] %>
 			<% @reviews.each do |review| %>
@@ -26,18 +27,19 @@
 
 			<% @movie_reviews[0..2].each_with_index do |review| %>
 				<% if review.movie_title == movie.title %>
-					<div class="movie-review-content">
-						<em>"<%= review.comment %>"</em> 
-						<p class="review-author-text">-<%= review.user_email %></p>
-					</div>
+					<% if review.comment.length > 0 %>
+						<div class="movie-review-content">
+							<em>"<%= truncate(review.comment, :length => 60) %>"</em> 
+							<p class="review-author-text">-<%= truncate(review.user_email, :length => 25) %></p>
+						</div>
+					<% end %>
 				<% end %>
 			<% end %>
-
+			<br>
 			<% if @movie_reviews.length > 2 %>
-				<%= link_to "View More", show_movie_path(:movie_id => movie.id) %>
+				<%= link_to "More Reviews...", show_movie_path(:movie_id => movie.id) %>
 			<% end %>
-
-			<%= link_to 'Leave a Review', new_review_path(:movie_title => movie.title) %>	
+			<%= link_to 'Write a Review', new_review_path(:movie_title => movie.title), class: "write-review" %>	
 		</div>
 	</div>
 

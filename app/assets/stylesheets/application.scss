@@ -24,6 +24,16 @@
 	font-family: 'Lato', sans-serif;
 }
 
+.main-container{
+	padding: 0 15%;
+}
+
+.pagination-container{
+	margin: 2.5% auto 0;
+	display: block;
+	width: 120px;
+}
+
 /*** Navbar Styles ***/
 
 #navbar-main-title{
@@ -39,5 +49,5 @@
 
 .navbar{
 	font-family: 'Libre Franklin', sans-serif;
-	outline: 10px solid #343a40;
+	outline: 15px solid #343a40;
 }

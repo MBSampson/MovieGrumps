@@ -15,6 +15,8 @@ class ReviewsController < ApplicationController
       @movies = @movies.sort_by &:genre
     end
 
+    @movies = Kaminari.paginate_array(@movies).page(params[:page]).per(8)
+
     @recent_reviews = Review.all.sort_by &:review_date
     @recent_movies = Tmdb::Movie.popular
     @recent_movies = @recent_movies.results.sort_by &:release_date

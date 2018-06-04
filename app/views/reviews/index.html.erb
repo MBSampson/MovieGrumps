@@ -8,15 +8,18 @@ Sort By:
 </div>
 
 <div class="row">
-  <div class="col-lg-9">
+  <div class="col-lg-8">
     <%= render 'show_movie_content' %>
   </div>
-  <div class="col-lg-3">
+  <div class="col-lg-4">
   	<div class="recent-content-container">
   		<%= render 'show_recent_reviews' %>
   		<hr>
-    		<%= render 'show_recent_movies' %>
+    	<%= render 'show_recent_movies' %>
   	</div>
   </div>
 </div>
 
+<div class="pagination-container">
+  <%= paginate @movies %>
+</div>
