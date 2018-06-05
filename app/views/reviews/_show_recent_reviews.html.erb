@@ -1,7 +1,13 @@
 <div class="recent-reviews-container">
 	<h3>Recent Reviews</h3>
-	<% @recent_reviews[0..1].each do |review| %>
-		<p><%= review.movie_title %></p>
+	<br>
+	<% @recent_reviews[0..3].each do |review| %>
+		<div class="recent-review-item">
+			<%= review.movie_title %>
+			<span class="recent-review-rating">"<%= truncate(review.comment, :length => 30) %>"</span>
+		</div>
+		<br>
 	<% end %> 
-	<%= link_to "View All Reviews", review_list_path %>
+	<%= link_to "View All Reviews", review_list_path, class: "float-right" %>
+	<br>
 </div>

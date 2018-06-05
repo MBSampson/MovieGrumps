@@ -4,10 +4,26 @@
 		<div class="col-xl-2">
 			<%= link_to show_movie_path(:movie_id => movie.id) do %>
 				<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/<%= movie.poster_path %>" class="review-item-img">
-			<% end %>
+			<% end %>	
 		</div>
 		<div class="col-xl-10">
 			<h3><%= movie.title %></h3>
+			<% @movie_rating = 0 %>
+			<% @total_reviews = 0 %>
+			<% @reviews.each do |review| %>
+				<% if review.movie_title == movie.title %>
+					<% @total_reviews = @total_reviews + 1 %>
+					<% @movie_rating = @movie_rating + review.rating %>
+				<% end %>
+			<% end %>
+			<div>
+				<% if @total_reviews != 0 %>
+					<% (@movie_rating/@total_reviews).times do %>
+						<%= image_tag("grumps-review-icon.png", class: "grump-rating-icon") %>
+					<% end %>
+				<% end %>
+			</div>
+			<br>
 			<p class="release-date">Release: <%= movie.release_date %></p>
 			<p> 
 				<% movie.genre_ids.each do |movie_genre| %>

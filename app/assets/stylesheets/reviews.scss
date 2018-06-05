@@ -54,6 +54,19 @@
 	}
 }
 
+.recent-movie-item, .recent-review-item{
+	clear: both;
+}
+
+.recent-movie-rating, .recent-review-rating{
+	float: right;
+	display: inline-block;
+}
+
+.recent-review-rating{
+	font-style: italic;
+}
+
 .about-container, .new-review-container{
 	font-family: 'Lato', sans-serif;
 	font-size: 14px;

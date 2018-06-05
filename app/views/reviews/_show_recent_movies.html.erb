@@ -1,7 +1,28 @@
 <div class="recent-movies-container">
 	<h3>Recent Movies</h3>
+	<br>
 	<% @recent_movies[0..3].each do |movie| %>
-		<p><%= movie.title %></p>
-	<% end %> 
-	<%= link_to "View All Movies", movies_path %>
+		<div class="recent-movie-item">
+			<%= movie.title %>	
+
+			<% @movie_rating = 0 %>
+			<% @total_reviews = 0 %>
+			<% @reviews.each do |review| %>
+				<% if review.movie_title == movie.title %>
+					<% @total_reviews = @total_reviews + 1 %>
+					<% @movie_rating = @movie_rating + review.rating %>
+				<% end %>
+			<% end %>
+			<div class="recent-movie-rating">
+				<% if @total_reviews != 0 %>
+					<% (@movie_rating/@total_reviews).times do %>
+						<%= image_tag("grumps-review-icon.png", class: "grump-rating-icon") %>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+		<br>	 
+	<% end %>
+	<%= link_to "View All Movies", movies_path, class: "float-right" %>
+	<br>
 </div>
