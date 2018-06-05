@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: MovieGrumps_production
-  username: MovieGrumps
-  password: <%= ENV['MOVIEGRUMPS_DATABASE_PASSWORD'] %>
+  username:
+  password:
