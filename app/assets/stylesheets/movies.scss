@@ -8,9 +8,15 @@
 
 .movie-description-container{
 	padding: 25px;
+	position: relative;
+
+		.write-review{
+			right: 2.5%;
+			position: absolute;
+		}
 }
 
-.movie-review-item{
+.movie-review-item, .show-review-item{
 	background: #fbfbfb;
 	padding: 10px 5px;
 	border: 5px solid white;
@@ -31,6 +37,10 @@
 	.review-title-content{
 		float: left;
 	}
+}
+
+.show-review-item{
+	background: white;
 }
 
 .movie-list-title{
@@ -57,7 +67,7 @@
 	}
 
 	.movie-info-content{
-	padding-left: 2.5%;
+		padding-left: 2.5%;
 	}
 }
 

@@ -1,22 +1,23 @@
 <br>
+<br>
+<br>
 <div class="row">
 	<div class="col-md-2">
 		<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/<%= @movie.poster_path %>">	
 	</div>
-	<div class="col-xl-10 movie-info-content">
-		<div class="movie-description-container">
-			<h2><%= @movie.title %></h2>
-			<h5><%= @movie.tagline %></h5>
-			<br>
-			<p><%= @movie.overview %></p>
-			<br>
-			<p>Genre: 
-				<% @movie.genres.each do |genre| %>
-					<span class="btn btn-dark btn-sm"><%= genre.name %></span>
-				<% end %>
-			</p>
-			<p>Release Date: <%= @movie.release_date %></p>
-		</div>
+	<div class="col-xl-10 movie-description-container">
+		<h2><%= @movie.title %></h2>
+		<h5><%= @movie.tagline %></h5>
+		<br>
+		<p><%= @movie.overview %></p>
+		<br>
+		<p>Genre: 
+			<% @movie.genres.each do |genre| %>
+				<span class="btn btn-dark btn-sm"><%= genre.name %></span>
+			<% end %>
+		</p>
+		<p>Release Date: <%= @movie.release_date %></p>
+		<%= link_to 'Write a Review', new_review_path(:movie_id => @movie.id), class: "write-review" %>	
 	</div>
 </div>
 <br>

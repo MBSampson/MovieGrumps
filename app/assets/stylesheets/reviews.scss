@@ -49,18 +49,29 @@
 	background-color: rgba(0, 0, 0, 0.01);
 
 	.review-info-content{
-	padding-left: 2.5%;
+		padding-left: 2.5%;
+		float: right;
 	}
 }
 
 .about-container, .new-review-container{
 	font-family: 'Lato', sans-serif;
 	font-size: 14px;
-	padding-top: 5%;
+	padding-top: 5.35%;
 }
 
 .small-brand-image{
 	height: 100px;
 	float: left;
 	padding-right: 2.5%;
+}
+
+.new-review-form{
+	textarea{
+		width: 100%;
+		height: 100px;
+	}
+	select{
+		width: 100%;
+	}
 }

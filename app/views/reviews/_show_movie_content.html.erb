@@ -2,7 +2,9 @@
 
 	<div class="row review-item">
 		<div class="col-xl-2">
-			<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/<%= movie.poster_path %>" class="review-item-img">
+			<%= link_to show_movie_path(:movie_id => movie.id) do %>
+				<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/<%= movie.poster_path %>" class="review-item-img">
+			<% end %>
 		</div>
 		<div class="col-xl-10">
 			<h3><%= movie.title %></h3>
@@ -39,7 +41,7 @@
 			<% if @movie_reviews.length > 2 %>
 				<%= link_to "More Reviews...", show_movie_path(:movie_id => movie.id) %>
 			<% end %>
-			<%= link_to 'Write a Review', new_review_path(:movie_title => movie.title), class: "write-review" %>	
+			<%= link_to 'Write a Review', new_review_path(:movie_id => movie.id), class: "write-review" %>	
 		</div>
 	</div>
 

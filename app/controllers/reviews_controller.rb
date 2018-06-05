@@ -39,6 +39,7 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @time = Time.now
+    @movie = Tmdb::Movie.detail(params[:movie_id])
   end
 
   def edit
