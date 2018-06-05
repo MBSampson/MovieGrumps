@@ -82,7 +82,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql 
+  encoding: utf8
   database: MovieGrumps_production
+  pool: 5 
   username:
   password:
