@@ -82,9 +82,13 @@
 .new-review-form{
 	textarea{
 		width: 100%;
-		height: 100px;
+		height: 30px;
 	}
 	select{
 		width: 100%;
+	}
+
+	div.actions input {
+		margin: 6%;
 	}
 }

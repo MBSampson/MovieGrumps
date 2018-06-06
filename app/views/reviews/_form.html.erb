@@ -53,12 +53,14 @@
         <%= form.text_area :comment %>
       </div>
     </div>
+    <div class="col-lg-4">
+      <div class="actions">
+        <%= form.hidden_field :movie_title, :value => @movie.title %>
+        <%= form.hidden_field :review_date, :value => @time %>
+        <%= form.submit %>
+      </div>
+    </div>
     <br>
   </div>
   <br>
-  <div class="actions">
-    <%= form.hidden_field :movie_title, :value => @movie.title %>
-    <%= form.hidden_field :review_date, :value => @time %>
-    <%= form.submit %>
-  </div>
 <% end %>
