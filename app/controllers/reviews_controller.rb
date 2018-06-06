@@ -42,9 +42,6 @@ class ReviewsController < ApplicationController
     @movie = Tmdb::Movie.detail(params[:movie_id])
   end
 
-  def edit
-  end
-
   def create
     @review = Review.new(review_params)
 

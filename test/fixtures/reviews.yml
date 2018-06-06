@@ -1,7 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  movie_title: Deadpool 2
+  review_date: <%= 5.day.ago %>
+  user_email: test@test.com
+  rating: 2
+  comment: test comment
 
 two:
-  title: MyString
+  movie_title: Thor
+  review_date: <%= 2.day.ago %>
+  user_email: test@test.com
+  rating: 3
+  comment: test comment

@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  genre_id: 1
+  name: Action
+  genre_id: 28
 
 two:
-  name: MyString
-  genre_id: 1
+  name: Comedy
+  genre_id: 35
