@@ -1,0 +1,12 @@
+<h2><%= @movie.title %></h2>
+<h5><%= @movie.tagline %></h5>
+<br>
+<p><%= @movie.overview %></p>
+<br>
+<p>Genre:
+	<% @movie.genres.each do |genre| %>
+		<span class="btn btn-dark btn-sm"><%= genre.name %></span>
+	<% end %>
+</p>
+<p>Release Date: <%= @movie.release_date %></p>
+<%= link_to 'Write a Review', new_review_path(:movie_id => @movie.id), class: "write-review" %>	

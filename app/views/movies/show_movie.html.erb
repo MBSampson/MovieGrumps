@@ -6,43 +6,12 @@
 		<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/<%= @movie.poster_path %>">	
 	</div>
 	<div class="col-xl-10 movie-description-container">
-		<h2><%= @movie.title %></h2>
-		<h5><%= @movie.tagline %></h5>
-		<br>
-		<p><%= @movie.overview %></p>
-		<br>
-		<p>Genre: 
-			<% @movie.genres.each do |genre| %>
-				<span class="btn btn-dark btn-sm"><%= genre.name %></span>
-			<% end %>
-		</p>
-		<p>Release Date: <%= @movie.release_date %></p>
-		<%= link_to 'Write a Review', new_review_path(:movie_id => @movie.id), class: "write-review" %>	
+		<%= render 'show_movie_description_content' %>
 	</div>
 </div>
 <br>
 <div class="row">
-	<% @reviews[0..3].each do |review| %>
-		<% if review.movie_title == @movie.title %>
-			<div class="col-lg-6 movie-review-item">
-				<div class="review-rating-content">
-					<% review.rating.times do %>
-					<%= image_tag("grumps-review-icon.png", class: "grump-rating-icon") %>
-				<% end %>
-				</div>
-				<div class="review-title-content">
-					<p><%= review.movie_title %></p>
-				</div>
-				<br>
-				<br>
-				<br>
-				<p class="review-text-content"><em><%= review.comment %></em></p>
-				<br>
-				<p class="review-user-content"><%= review.user_email %></p>
-				<p>Posted: <%= review.review_date%></p>
-			</div>
-		<% end %>
-	<% end %>
+	<%= render 'show_movie_reviews' %>
 </div>
 <div class="pagination-container">
 	<%= paginate @reviews %>
