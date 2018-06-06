@@ -6,4 +6,4 @@ Built using... Ruby on Rails with gems such as Faker, Kaminari, PostgreSQL, Boot
 
 ### Deployment
 
-[MovieGrumps]() on Heroku
+[MovieGrumps](https://moviegrumps.herokuapp.com/) on Heroku
